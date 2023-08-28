@@ -1,17 +1,16 @@
 name: GH-Actions-Only
 
 on:
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+  workflow_dispatch:
+    inputs:
+      branch:
+        type: "string"
+        default: "main"
 env:
   CARGO_TERM_COLOR: always
 jobs:
   go_service_build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
