@@ -8,8 +8,7 @@ on:
         default: "main"
 jobs:
   satellites-build:
-    runs-on: arc-runner-set
-#    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
